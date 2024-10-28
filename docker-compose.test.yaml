@@ -2,11 +2,11 @@
 # that test output is saved to the host
 
 services:
-  ffc-template-node:
+  pd-contract-test-producer:
     build:
       target: development
-    image: ffc-template-node-development
-    container_name: ffc-template-node-test
+    image: pd-contract-test-producer-development
+    container_name: pd-contract-test-producer-test
     command: npm run test
     volumes:
       - ./app:/home/node/app
