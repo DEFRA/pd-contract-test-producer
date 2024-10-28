@@ -1,5 +1,36 @@
 {% extends '_layout.njk' %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
 
 {% block content %}
-  <h1>Hello world</h1>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Apply for funding</h1>
+      <p class="govuk-body">Use this service to:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>apply for funding</li>
+      </ul>
+      {{ govukButton({
+        text: "Start now",
+        href: "/apply",
+        isStartButton: true
+      }) }}
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <aside class="app-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Useful links
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-!-font-size-16">
+            <li>
+              <a class="govuk-link" href="/session/clear">
+                Clear Session
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+    </div>
+  </div>
 {% endblock %}

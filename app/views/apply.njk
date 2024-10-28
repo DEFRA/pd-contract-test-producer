@@ -1,0 +1,37 @@
+{% extends '_layout.njk' %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="/apply" method="post" novalidate>
+        <input type="hidden" name="crumb" value="{{ crumb }}">
+        {{ govukRadios({
+          name: "needsFunding",
+          fieldset: {
+            legend: {
+              text: "Do you need funding?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+              value: true,
+              text: "Yes"
+            },
+            {
+              value: false,
+              text: "No"
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

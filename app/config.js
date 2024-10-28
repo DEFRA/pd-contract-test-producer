@@ -27,6 +27,18 @@ const config = convict({
     default: 3000,
     env: 'PORT',
     arg: 'port'
+  },
+  appName: {
+    doc: 'The name of the application.',
+    format: String,
+    default: 'Contract Test Producer',
+    env: 'APP_NAME'
+  },
+  sessionPassword: {
+    doc: 'The password used to encrypt the session cookie.',
+    format: String,
+    default: '',
+    env: 'SESSION_PASSWORD'
   }
 })
 

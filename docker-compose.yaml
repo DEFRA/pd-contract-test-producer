@@ -8,3 +8,4 @@ services:
     environment:
       APPINSIGHTS_CLOUDROLE: pd-contract-test-producer-local
       APPINSIGHTS_CONNECTIONSTRING: ${APPINSIGHTS_CONNECTIONSTRING}
+      SESSION_PASSWORD: this-is-not-a-real-password-just-for-local-testing
